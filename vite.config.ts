@@ -1,17 +1,23 @@
+import { defineConfig } from 'vite';
 import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
+export default defineConfig(() => {
+  return {
+    // GitHub Pages cần base path là tên repository
+    base: process.env.NODE_ENV === 'production' ? '/lumi-lighting/' : '/',
+    resolve: {
+      alias: {
+        '@': path.resolve(import.meta.url, '.'),
+      }
+    },
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
         }
       }
-    };
+    }
+  };
 });

@@ -1,14 +1,33 @@
-# Run and deploy your AI Studio app
+# Lumi Lighting Design Application
 
-This contains everything you need to run your app locally.
+Ứng dụng thiết kế chiếu sáng thông minh giúp tính toán và đề xuất giải pháp chiếu sáng cho không gian nội thất.
 
-## Run Locally
+## Chạy Ứng Dụng Locally
 
-**Prerequisites:**  Node.js
+**Yêu cầu:** Node.js và pnpm
 
+1. Cài đặt dependencies:
+   ```bash
+   pnpm install
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Chạy ứng dụng:
+   ```bash
+   pnpm run dev
+   ```
+
+3. Truy cập: http://localhost:5173
+
+## Build Production
+
+```bash
+pnpm run build
+```
+
+## Tính Năng
+
+- 🏠 Thiết kế chiếu sáng cho nhiều loại không gian
+- 💡 Đề xuất sản phẩm đèn phù hợp
+- 📊 Tính toán độ rọi và độ đồng đều ánh sáng
+- 🎨 Giao diện thân thiện, dễ sử dụng
+- 📋 Xuất báo cáo thiết kế chi tiết
